@@ -1,0 +1,24 @@
+<section class="welcome">
+    <h1 class="message">
+        Capturamos experiencias únicas!
+    </h1>
+</section>
+
+
+<section>
+    <div class="container benefits">
+        <ng-container *ngFor="let beneficio of beneficios;let i = index">
+            <app-card image="{{beneficio.image}}" title="{{beneficio.title}}" description="{{beneficio.description}}"></app-card>
+        </ng-container>
+    </div>
+</section>
+
+
+<section class="second-section">
+    <div class="container">
+        <h2>Fotografía que habla por sí misma.</h2>
+    </div>
+    <img class="img-landing" 
+    src="https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    alt="">
+</section>

@@ -1,0 +1,31 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 35px;
+    background-color: HSLA(288,100%,93%,1);
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 90%;
+    animation: slidefromtop 0.5s;
+    animation-delay: var(--delay);
+}
+
+.card-title{
+    text-align: center;
+    font-size: 1.5em;
+    text-wrap: balance;
+}
+
+.card-text{
+    text-align: center;
+    align-self: center;
+    opacity: 0.8;
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        height: auto;
+    }
+}
