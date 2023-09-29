@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { HomeComponent } from './landing/home/home.component';
 import { CardComponent } from './reusable/card/card.component';
+import { PlansComponent } from './landing/plans/plans.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    PlansComponent
   ],
   imports: [
     BrowserModule,

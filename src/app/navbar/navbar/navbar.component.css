@@ -6,8 +6,7 @@
     align-items: center;
     width: 100vw;
     height: 80px;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
 .menu{
@@ -65,7 +64,8 @@
         top: 100%;
         transition: 0.2s;
         width: 0;
-        background-color: #fff;
+        background-color: transparent;
+        backdrop-filter: blur(25px);
         box-shadow: rgba(0, 0, 0, 0.1) 5px 10px 12px;
       }
 
@@ -80,7 +80,7 @@
       }
 
       .links-container.active{
-        width: 85vw;
+        width: 100vw;
       }
 
       .link{

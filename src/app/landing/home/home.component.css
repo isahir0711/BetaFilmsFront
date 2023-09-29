@@ -1,22 +1,59 @@
+.scroll-container{
+    position: relative;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
 .welcome{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    height: 650px;
     font-size: 2.3em;
+    height: 100vh;
+    background-size:  cover;
+    scroll-snap-align: start;
+}
+
+.message{
+    animation: fadeopacity 1.5s;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.welcome:nth-child(1){
+    background-color:hsla(0,0%,100%,1);
+    background-image:
+    radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);
+}
+
+.welcome:nth-child(2){
     background-color:hsla(222,0%,100%,1);
     background-image:
     radial-gradient(at 83% 17%, hsla(288,100%,93%,1) 0px, transparent 50%),
     radial-gradient(at 20% 64%, hsla(288,100%,91%,1) 0px, transparent 50%);
 }
 
-.message{
-    animation: fadeopacity 1.5s;
+.welcome:nth-child(3){
+    color: #fff;
+    background-image: url("https://static1.squarespace.com/static/58e074ef44024364dba06a89/5a4e8c5b24a6946c4c56c2c9/5a5441e5e4966b16d152f5f8/1563200182521/?format=1500w");
+    /* background-color:hsla(107,0%,100%,1);
+    background-image:
+    radial-gradient(at 15% 66%, hsla(111,69%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 42% 72%, hsla(242,76%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 16% 1%, hsla(220,79%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 20% 28%, hsla(69,87%,60%,1) 0px, transparent 50%); */
 }
 
-.second-section{
+
+/* .second-section{
     margin-top: 200px;
     text-align: center;
     font-size: 1.2em;
@@ -36,7 +73,7 @@
     grid-auto-rows: 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
-}
+} */
 
 @media only screen and (max-width: 600px) {
     .welcome{
