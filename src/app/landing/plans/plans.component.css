@@ -1,0 +1,61 @@
+.plans-container {
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsla(107, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 42% 72%, hsla(242, 76%, 67%, 1) 0px, transparent 50%),
+        radial-gradient(at 16% 1%, hsla(220, 79%, 73%, 1) 0px, transparent 50%);
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: #fff;
+    margin: 20px;
+    border-radius: 20px;
+    flex-basis: 400px;
+    padding: 30px;
+    background-color: #00000033;
+    backdrop-filter: blur(10px);
+    animation: slidefromtop 0.8s;
+}
+
+.choose-title{
+    font-size: 3em;
+    padding: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    animation: fadeopacity 1.2s;
+}
+
+.plan-description {
+    opacity: 0.7;
+}
+
+.plan-price {
+    font-size: 5em;
+}
+
+.benefits {
+    list-style: none;
+}
+
+.benefit::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url(src/imgs/icons/check-icon.png);
+    background-size: 30px;
+}
+
+.benefit {
+    margin: 10px;
+}
