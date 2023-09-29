@@ -12,8 +12,9 @@
 }
 
 .form{
+    margin: 15px;
     flex-basis: 400px;
-    background-color: #ffffff48;
+    background-color: #ffffff9f;
     padding: 40px;
     font-size: 1em;
     animation: slidefromtop 0.7s;

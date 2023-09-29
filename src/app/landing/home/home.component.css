@@ -19,8 +19,6 @@
 
 .message{
     animation: fadeopacity 1.5s;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
     padding: 20px;
 }
 
