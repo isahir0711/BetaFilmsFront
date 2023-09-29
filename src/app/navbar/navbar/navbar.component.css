@@ -35,6 +35,10 @@
     color: #000;
 }
 
+.dark-background{
+  color: #fff;
+}
+
 .backdrop{
     position: absolute;
     background: #e7e7e78e;

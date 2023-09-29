@@ -8,6 +8,7 @@ import { HomeComponent } from './landing/home/home.component';
 import { CardComponent } from './reusable/card/card.component';
 import { PlansComponent } from './landing/plans/plans.component';
 import { NotfoundComponent } from './landing/notfound/notfound.component';
+import { AuthformComponent } from './accounts/authform/authform.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotfoundComponent } from './landing/notfound/notfound.component';
     HomeComponent,
     CardComponent,
     PlansComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AuthformComponent
   ],
   imports: [
     BrowserModule,
