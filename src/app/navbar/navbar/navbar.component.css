@@ -2,7 +2,7 @@
     top: 0;
     position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: 80px;
@@ -29,6 +29,7 @@
 }
 
 .link{
+    margin: 20px;
     padding: 20px;
     text-decoration: none;
     color: #000;

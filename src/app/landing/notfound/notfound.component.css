@@ -1,0 +1,11 @@
+.plans-container {
+    font-size: 3.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;background-color:hsla(0,0%,100%,1);
+    background-image:
+    radial-gradient(at 2% 3%, hsla(18,80%,47%,1) 0px, transparent 50%),
+    radial-gradient(at 99% 95%, hsla(242,100%,70%,1) 0px, transparent 50%);
+}

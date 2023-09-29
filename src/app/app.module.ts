@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { HomeComponent } from './landing/home/home.component';
 import { CardComponent } from './reusable/card/card.component';
 import { PlansComponent } from './landing/plans/plans.component';
+import { NotfoundComponent } from './landing/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PlansComponent } from './landing/plans/plans.component';
     NavbarComponent,
     HomeComponent,
     CardComponent,
-    PlansComponent
+    PlansComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
