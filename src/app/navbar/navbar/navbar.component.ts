@@ -28,8 +28,17 @@ export class NavbarComponent implements OnInit  {
     }
   }
 
+  closeMenu(){
+    const nav = document.querySelector('.links-container');
+    if(nav !== null){
+      nav.classList.toggle("active");
+    }
+  }
+
+
   logOut(){
     this.securityService.logOut();
+    this.closeMenu();
   }
 
   // overlayRender(): void{
