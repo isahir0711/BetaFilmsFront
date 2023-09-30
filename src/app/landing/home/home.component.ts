@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Beneficio } from '../beneficios';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,12 @@ import { Beneficio } from '../beneficios';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  constructor(private securityService:SecurityService) {
+  }
+
   ngOnInit(): void {
+    this.securityService.getRole();
   }
 
   beneficios: Beneficio[] =[

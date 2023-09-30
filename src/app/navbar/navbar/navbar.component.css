@@ -30,9 +30,10 @@
 
 .link{
     margin: 20px;
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
     color: #000;
+    cursor: pointer;
 }
 
 .links-container{
@@ -55,6 +56,7 @@
   .backdrop.show{
     opacity: 1;
   }
+
 
   @media only screen and (max-width: 600px) {
     
@@ -94,6 +96,7 @@
       }
 
       .link{
+        margin: 10px;
         font-size: 2em;
         pointer-events: none;
         display: none;

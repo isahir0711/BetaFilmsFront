@@ -5,13 +5,13 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:hsla(0,0%,100%,1);
+    background-color: hsla(0, 0%, 100%, 1);
     background-image:
-    radial-gradient(at 0% 38%, hsla(199,62%,56%,1) 0px, transparent 50%),
-    radial-gradient(at 99% 95%, hsla(240,100%,61%,1) 0px, transparent 50%);
+        radial-gradient(at 0% 38%, hsla(199, 62%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 99% 95%, hsla(240, 100%, 61%, 1) 0px, transparent 50%);
 }
 
-.form{
+.form {
     margin: 15px;
     flex-basis: 400px;
     background-color: #ffffff9f;
@@ -20,20 +20,25 @@
     animation: slidefromtop 0.7s;
 }
 
-.control-container{
+.action-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.control-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 40px;
 }
 
-.form-input{
+.form-input {
     border: 0.5px solid rgba(128, 128, 128, 0.651);
     border-radius: 5px;
     padding: 10px;
 }
 
-.form-span{
+.form-span {
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -41,13 +46,13 @@
     font-size: 0.8em;
 }
 
-.signin{
+.signin {
     text-decoration: none;
     color: #000;
     font-weight: 600;
 }
 
-.btn{
+.btn {
     border: none;
     border-radius: 5px;
     padding: 15px;
@@ -61,11 +66,32 @@
     cursor: pointer;
 }
 
-.primary{
+.primary {
     background-color: rgb(53, 53, 255);
 }
 
-
-.primary:hover{
+.primary:hover {
     background-color: rgb(11, 11, 255);
+}
+
+.btn:disabled {
+    cursor:not-allowed;
+    background-color: #5c636a;
+}
+
+.errors-container {
+    transition: all 0.4s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f1aeb5;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.error {
+    color: rgba(255, 91, 91, 0.842);
+    font-size: 0.7em;
+    animation-name: slidefromtop;
+    animation-duration: 0.3s;
 }

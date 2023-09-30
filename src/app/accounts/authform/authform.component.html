@@ -1,19 +1,37 @@
 <section class="form-container">
-    <form class="form" action="">
+    <form class="form" action="" (submit)="onSubmit.emit(form.value)" [formGroup]="form">
+
+        <h2 class="action-title">{{action}}</h2>
+
+        <ng-container *ngIf="errors !==  null" class="errors">
+            {{errors}}
+        </ng-container>
 
         <div class="control-container">
             <label for="email" class="form-label">Correo</label>
-            <input type="email" id="email" class="form-input">
+            <input type="email" id="email" class="form-input" formControlName="email">
+            <div class="error" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                El email es obligatorio
+            </div>
         </div>
 
         <div class="control-container">
-            <label for="email" class="form-label">Contraseña</label>
-            <input type="password" id="email" class="form-input">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" class="form-input" formControlName="password">
+            <div class="error" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                La contrasea es obligatoria
+            </div>
         </div>
 
         <div class="control-container">
-            <button class="btn primary" type="submit">Iniciar Sesion</button>
-            <span class="form-span">¿No tienes una cuenta? <a class="signin" routerLink="">Registrate</a></span>
+            <button class="btn primary" type="submit" [disabled]="form.invalid">{{action}}</button>
+            <ng-container *ngIf="action=='Iniciar Sesion';">
+                <span class="form-span">¿No tienes una cuenta? <a class="signin" routerLink="../SignIn">Registrate</a></span>
+            </ng-container>
+            <ng-container *ngIf="action=='Registrate';">
+                <span class="form-span">¿Ya tienes una cuenta? <a class="signin" routerLink="../LogIn">Inicia Sesion</a></span>
+            </ng-container>
+            
             
         </div>
     </form>

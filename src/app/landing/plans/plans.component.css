@@ -1,9 +1,5 @@
 .plans-container {
     padding-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color: hsla(107, 0%, 100%, 1);
     background-image:
@@ -11,14 +7,19 @@
         radial-gradient(at 16% 1%, hsla(220, 79%, 73%, 1) 0px, transparent 50%);
 }
 
+.gridplans{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
 .plan {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 25px;
     color: #fff;
     margin: 20px;
     border-radius: 20px;
-    flex-basis: 400px;
     padding: 30px;
     background-color: #00000033;
     backdrop-filter: blur(10px);
@@ -42,20 +43,11 @@
     font-size: 5em;
 }
 
-.benefits {
-    list-style: none;
-}
-
-.benefit::before {
-    content: '';
-    display: inline-block;
-    margin-right: 10px;
-    height: 30px;
-    width: 30px;
-    background-image: url(src/imgs/icons/check-icon.png);
-    background-size: 30px;
-}
-
 .benefit {
-    margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .gridplans{
+        grid-template-columns: 1fr;
+    }
 }

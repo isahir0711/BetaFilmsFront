@@ -1,4 +1,5 @@
 import {Component, OnInit, } from '@angular/core';
+import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +8,11 @@ import {Component, OnInit, } from '@angular/core';
 })
 export class NavbarComponent implements OnInit  {
 
+  constructor(private securityService:SecurityService) {
+  }
+
   ngOnInit(): void {
-    this.overlayRender();
+    // this.overlayRender();
   }
 
 
@@ -24,23 +28,27 @@ export class NavbarComponent implements OnInit  {
     }
   }
 
-  overlayRender(): void{
-    const backdrop = document.querySelector('.backdrop');
-    const nav_links = document.querySelectorAll('.link');
-
-    nav_links.forEach((list_item)=>{
-      list_item.addEventListener('mouseover',() =>{
-        backdrop?.classList.add('show');
-        let position = list_item.getBoundingClientRect();
-        (backdrop as HTMLElement).style.left = position.x  + 'px';
-        (backdrop as HTMLElement).style.top = position.y  + 'px';
-        (backdrop as HTMLElement).style.height = position.height  + 'px';
-        (backdrop as HTMLElement).style.width = position.width  + 'px';
-      });
-      list_item.addEventListener('mouseleave',() =>{
-        backdrop?.classList.remove('show');
-      })
-    });
+  logOut(){
+    this.securityService.logOut();
   }
+
+  // overlayRender(): void{
+  //   const backdrop = document.querySelector('.backdrop');
+  //   const nav_links = document.querySelectorAll('.link');
+    
+  //   nav_links.forEach((list_item)=>{
+  //     list_item.addEventListener('mouseover',() =>{
+  //       backdrop?.classList.add('show');
+  //       let position = list_item.getBoundingClientRect();
+  //       (backdrop as HTMLElement).style.left = position.x  + 'px';
+  //       (backdrop as HTMLElement).style.top = position.y  + 'px';
+  //       (backdrop as HTMLElement).style.height = position.height  + 'px';
+  //       (backdrop as HTMLElement).style.width = position.width  + 'px';
+  //     });
+  //     list_item.addEventListener('mouseleave',() =>{
+  //       backdrop?.classList.remove('show');
+  //     })
+  //   });
+  // }
 
 }

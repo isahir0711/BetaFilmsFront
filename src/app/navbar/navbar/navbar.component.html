@@ -13,15 +13,23 @@
 
     <div class="links-container">
         
-    <a href="" class="link">betaFilms</a>
+    <a href="" class="link" appOverlay>betaFilms</a>
         <ul class="links">
-            <li><a href="" id="texto" class="link">Nosotros</a></li>
-            <li><a routerLink="" class="link">Inicio</a></li>
-            <li><a routerLink="Planes" class="link">Planes</a></li>
+            <li><a href="" id="texto" class="link" appOverlay>Nosotros</a></li>
+            <li><a routerLink="" class="link" appOverlay>Inicio</a></li>
+            <li><a routerLink="Planes" class="link" appOverlay>Planes</a></li>
         </ul>
         
-    <a routerLink="LogIn" class="link">Ingresar</a>
+        <app-auth>
+            <ng-container Authorized>
+                <a (click)="logOut()" class="link" appOverlay>Salir</a>
+            </ng-container>
+            
+            <ng-container notAuthorized>
+                <a routerLink="Accounts/LogIn" class="link" appOverlay>Ingresar</a>
+            </ng-container>
+            
+        </app-auth>
+    
     </div>
-
-
 </nav>
