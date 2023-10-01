@@ -30,9 +30,14 @@ export class NavbarComponent implements OnInit  {
 
   closeMenu(){
     const nav = document.querySelector('.links-container');
+    const links = document.querySelectorAll('.link');
     if(nav !== null){
       nav.classList.toggle("active");
+      links.forEach(link => {
+        link.classList.toggle("active");
+      });
     }
+
   }
 
 

@@ -5,12 +5,19 @@ import { PlansComponent } from './landing/plans/plans.component';
 import { NotfoundComponent } from './landing/notfound/notfound.component';
 import { LoginComponent } from './accounts/login/login.component';
 import { SigninComponent } from './accounts/signin/signin.component';
+import { PaymentComponent } from './payments/payment/payment.component';
+import { PayplanComponent } from './landing/plans/payplan/payplan.component';
+import { SuccessComponent } from './payments/success/success.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"Planes",component:PlansComponent},
   {path:"Accounts/LogIn",component:LoginComponent},
   {path:"Accounts/SignIn",component:SigninComponent},
+  {path:"Payments/Pay/:id",component:PayplanComponent},
+  
+  {path:"Payments/Success",component:SuccessComponent},
+  
   
   //wildcard route
   // {path: '**', redirectTo: ''}

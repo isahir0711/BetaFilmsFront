@@ -110,4 +110,8 @@
       .links-container.active .links {
         opacity: 1;
       }
+
+      .backdrop{
+        display: none;
+      }
 }

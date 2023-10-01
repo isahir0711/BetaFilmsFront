@@ -1,0 +1,22 @@
+<div class="card-container">
+    <form class="form-card" novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest">
+
+        <div class="controls-container">
+            <label for="name" class="form-label">Nombre Completo</label>
+            <input id="name" class="form-input" type="text" formControlName="name" placeholder="Jane Doe">
+        </div>
+
+        <div class="controls-container">
+            <p>Datos de la tarjeta</p>
+        </div>
+
+        <ngx-stripe-card class="frame-card" [options]="cardOptions"
+            [elementsOptions]="elementsOptions"></ngx-stripe-card>
+
+
+        <div class="control-container">
+            <button class="btn primary" type="submit">Pagar</button>
+        </div>
+
+    </form>
+</div>
