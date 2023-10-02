@@ -23,4 +23,8 @@ export class AuthComponent {
       return this.securityService.isLogged();
     }
   }
+
+  isAdmin(): boolean {
+    return this.securityService.getRole() === "admin";
+  }
 }

@@ -21,6 +21,10 @@ import { OverlayDirective } from './utilities/overlay.directive';
 import { PaymentComponent } from './payments/payment/payment.component';
 import { PayplanComponent } from './landing/plans/payplan/payplan.component';
 import { SuccessComponent } from './payments/success/success.component';
+import { ProductsformComponent } from './admin/dashboard/products/productsform/productsform.component';
+import { ProductslistComponent } from './admin/dashboard/products/productslist/productslist.component';
+import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
+import { SecurityInterceptorService } from './services/interceptors/security-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import { SuccessComponent } from './payments/success/success.component';
     PaymentComponent,
     PayplanComponent,
     SuccessComponent,
+    ProductsformComponent,
+    ProductslistComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,11 @@ import { SuccessComponent } from './payments/success/success.component';
     HttpClientModule,
     NgxStripeModule.forRoot('pk_test_51MuqjIF42Dhd4yKjjpunZzOS6jmStZqhKzmqr4eVg7ajPMNLSF8OFrdGZ4udzI8HABJqIYf9IHKtz148MxfnsRFy00XngnCFgt')
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:SecurityInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

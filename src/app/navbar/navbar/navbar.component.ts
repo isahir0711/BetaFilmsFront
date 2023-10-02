@@ -1,4 +1,5 @@
 import {Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { SecurityService } from 'src/app/services/security.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { SecurityService } from 'src/app/services/security.service';
 })
 export class NavbarComponent implements OnInit  {
 
-  constructor(private securityService:SecurityService) {
+  constructor(public securityService:SecurityService,private router:Router) {
   }
 
+  rol: string="";
+
   ngOnInit(): void {
+    this.rol = this.securityService.getRole();
     // this.overlayRender();
   }
 
@@ -43,26 +47,8 @@ export class NavbarComponent implements OnInit  {
 
   logOut(){
     this.securityService.logOut();
+    this.router.navigate(['Accounts/LogIn']);
     this.closeMenu();
   }
-
-  // overlayRender(): void{
-  //   const backdrop = document.querySelector('.backdrop');
-  //   const nav_links = document.querySelectorAll('.link');
-    
-  //   nav_links.forEach((list_item)=>{
-  //     list_item.addEventListener('mouseover',() =>{
-  //       backdrop?.classList.add('show');
-  //       let position = list_item.getBoundingClientRect();
-  //       (backdrop as HTMLElement).style.left = position.x  + 'px';
-  //       (backdrop as HTMLElement).style.top = position.y  + 'px';
-  //       (backdrop as HTMLElement).style.height = position.height  + 'px';
-  //       (backdrop as HTMLElement).style.width = position.width  + 'px';
-  //     });
-  //     list_item.addEventListener('mouseleave',() =>{
-  //       backdrop?.classList.remove('show');
-  //     })
-  //   });
-  // }
 
 }

@@ -48,7 +48,6 @@ export class SecurityService {
   }
 
   getRole(): string{
-    console.log(this.getTokenField(this.roleField));
     return this.getTokenField(this.roleField);
   }
 
