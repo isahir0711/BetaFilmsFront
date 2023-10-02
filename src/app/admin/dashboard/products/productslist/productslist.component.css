@@ -1,0 +1,23 @@
+.products-list{
+    padding-top: 90px;
+    margin-inline: 15%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.prod{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.438);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .products-list{
+       grid-template-columns: 1fr;
+        margin: 10px;
+    }
+}
