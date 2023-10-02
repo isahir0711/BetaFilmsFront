@@ -3,9 +3,13 @@
 
         <h2 class="action-title">{{action}}</h2>
 
-        <ng-container *ngIf="errors !==  null" class="errors">
-            {{errors}}
-        </ng-container>
+        <div class="errors-container" [class.show]="errors.length > 1">
+            <ng-container *ngIf="errors !==  null">
+                <ng-container *ngFor="let error of errors">
+                        <p>{{error}}</p>
+                </ng-container>
+            </ng-container>
+        </div>
 
         <div class="control-container">
             <label for="email" class="form-label">Correo</label>

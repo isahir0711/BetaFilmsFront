@@ -11,7 +11,7 @@ export class SecurityService {
   
   constructor(private httpClient: HttpClient) { }
 
-  apiURL = environment.apiURL + 'Accounts';
+  apiURL = environment.apiURL + 'api/Accounts';
 
   private readonly tokenkey = 'token';
   private readonly expirationkey = 'expiration';

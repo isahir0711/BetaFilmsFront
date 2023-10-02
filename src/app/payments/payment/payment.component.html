@@ -1,6 +1,7 @@
-<div class="card-container">
-    <form class="form-card" novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest">
+<div class="checkout-container">
 
+    <form class="form-card" novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest">
+        <h2 style="margin-bottom: 20px;">Informacion del pago</h2>
         <div class="controls-container">
             <label for="name" class="form-label">Nombre Completo</label>
             <input id="name" class="form-input" type="text" formControlName="name" placeholder="Jane Doe">
@@ -14,9 +15,23 @@
             [elementsOptions]="elementsOptions"></ngx-stripe-card>
 
 
-        <div class="control-container">
-            <button class="btn primary" type="submit">Pagar</button>
+        <div class="btn-container">
+            <button class="btn primary" [disabled]="stripeTest.invalid" type="submit">Pagar</button>
+        </div>
+    </form>
+
+    <article class="checkout-summary">
+        <h2>Resumen de pago</h2>
+        <div class="product card">
+            <h3>Plan de fotos</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sequi ab a quis, odio non in, maiores quisquam quidem dolor animi id est? Temporibus, eligendi.</p>
         </div>
 
-    </form>
+        <div class="total card">
+            <h3>Total</h3>
+            <p>400$USD</p>
+        </div>
+    </article>
+
+
 </div>

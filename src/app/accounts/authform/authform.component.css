@@ -85,9 +85,19 @@
     margin-bottom: 20px;
     background-color: #f8d7da;
     border: 1px solid #f1aeb5;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 0;
+    opacity: 0;
+    font-size: 12px;
 }
+
+.errors-container.show {
+    animation-name: slidefromtop 0.4s;
+    padding: 10px;
+    opacity: 1;
+}
+
+
 
 .error {
     color: rgba(255, 91, 91, 0.842);
