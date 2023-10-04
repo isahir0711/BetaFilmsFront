@@ -11,16 +11,18 @@ import { authGuard } from './services/guards/auth.guard';
 import { ProductslistComponent } from './admin/dashboard/products/productslist/productslist.component';
 import { adminGuard } from './services/guards/admin.guard';
 import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
+import { ProductsformComponent } from './admin/dashboard/products/productsform/productsform.component';
 
 const routes: Routes = [
-  {path:"",component:HomeComponent},
-  {path:"Planes",component:PlansComponent},
-  {path:"Accounts/LogIn",component:LoginComponent},
-  {path:"Accounts/SignIn",component:SigninComponent},
-  {path:"Payments/Pay/:id",component:PayplanComponent,canActivate:[authGuard]},
-  {path:"Payments/Success",component:SuccessComponent,canActivate:[authGuard]},
+  {path:"",title:'betaFilms',component:HomeComponent},
+  {path:"Planes",title:'Planes',component:PlansComponent},
+  {path:"Accounts/LogIn",title:'Log In',component:LoginComponent},
+  {path:"Accounts/SignIn",title:'Sign In',component:SigninComponent},
+  {path:"Payments/Pay/:id",title:'Checkout',component:PayplanComponent,canActivate:[authGuard]},
+  {path:"Payments/Success",title:'Exitoso',component:SuccessComponent,canActivate:[authGuard]},
 
   {path:"Dashboard/Products",component:ProductslistComponent,canActivate:[adminGuard]},
+  {path:"Dashboard/Products/Create",component:ProductsformComponent,canActivate:[adminGuard]},
   {path:"Dashboard",component:DashboardComponent,canActivate:[adminGuard]},
   
   

@@ -3,7 +3,7 @@
 
         <h2 class="action-title">{{action}}</h2>
 
-        <div class="errors-container" [class.show]="errors.length > 1">
+        <div class="errors-container" [class.show]="errors.length > 0">
             <ng-container *ngIf="errors !==  null">
                 <ng-container *ngFor="let error of errors">
                         <p>{{error}}</p>

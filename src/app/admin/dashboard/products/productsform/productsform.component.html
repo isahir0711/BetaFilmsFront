@@ -1,1 +1,20 @@
-
+<section class="form-container" >
+    <form class="formProd" [formGroup]="formProd" (submit)="createProd()">
+        <div class="controls-container">
+            <label for="">Nombre</label>
+            <input class="text-input" type="text" formControlName="name">
+        </div>
+        <div class="controls-container">
+            <label for="">Descripcion</label>
+            <textarea class="area-input" name="" id="" rows="10" formControlName="description"></textarea>
+        </div>
+        <div class="controls-container">
+            <label for="">Precio</label>
+            <input class="text-input" type="number" min="0" formControlName="price">
+        </div>
+        <div class="controls-container">
+            <button class="btn primary" [disabled]="formProd.invalid">Registrar</button>
+            <a routerLink="/Dashboard/Products" class="btn secondary" >Volver</a>
+        </div>
+    </form>
+</section>

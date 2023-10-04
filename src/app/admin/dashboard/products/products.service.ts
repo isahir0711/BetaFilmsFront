@@ -17,4 +17,11 @@ export class ProductsService {
     return this.http.get<ProductDTO[]>(`${this.apiURL}/GetProducts`);
   }
 
+  public createProduct(prod:ProductDTO): Observable<ProductDTO>{
+    return this.http.post<ProductDTO>(`${this.apiURL}/CreateProduct`,prod);
+  }
+
+  public deleteProduct(id:number):Observable<unknown>{
+    return this.http.delete(`${this.apiURL}/Delete/${id}`);
+  }
 }

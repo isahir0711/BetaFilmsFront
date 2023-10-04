@@ -4,52 +4,18 @@
     <h1 class="choose-title">Elije tu plan</h1>
     
     <div class="gridplans">
-        <article class="plan">
-            <h2 class="plan-title">6 horas de evento</h2>
-            <h3 class="plan-price">0$</h3>
-            <p class="plan-description">
-            </p>
-            <ul class="benefits">
-                <li class="benefit">Entrada de la XV</li>
-                <li class="benefit">Toma de fotos con la familia</li>
-                <li class="benefit">Baile con el padre</li>
-                <li class="benefit">Regalo sorpresa y pastel</li>
-            </ul>
-        </article>
-    
-        <article class="plan">
-            <h2 class="plan-title">Fotos digitales y video</h2>
-            <h3 class="plan-price">60$</h3>
-            <p class="plan-description">
-            </p>
-            <ul class="benefits">
-                <li class="benefit">Fotos ilimitadas del evento en general</li>
-                <li class="benefit">Videos Full HD (1920 x 1080) de todo el evento con duracion de 3 horas</li>
-            </ul>
-            <a routerLink="../Payments/Pay/price_1NwBFCF42Dhd4yKjiZO2Wnid">Pagar este</a>
-        </article>
-    
-        <article class="plan">
-            <h2 class="plan-title">Photoshoot</h2>
-            <h3 class="plan-price">80$</h3>
-            <p class="plan-descripion">
-            </p>
-            <ul class="benefits">
-                <li class="benefit">Sesion de fotos mes anterior del evento</li>
-                <li class="benefit">10 fotos editadas</li>
-            </ul>
-        </article>
-    
-        <article class="plan">
-            <h2 class="plan-title">Foto de 24x36</h2>
-            <h3 class="plan-price">80$</h3>
-            <p class="plan-descripion">
-            </p>
-            <ul class="benefits">
-                <li class="benefit">Solo entrega de imagen impresa 24x36</li>
-                <li class="benefit">Marco para el dia del evento</li>
-            </ul>
-        </article>
+        <ng-container *ngFor="let plan of plans;let i = index">
+            <article class="plan">
+                <h2 class="plan-title">{{plan.name}}</h2>
+                <h3 class="plan-price">{{plan.price | currency}}</h3>
+                <p class="plan-description">
+                </p>
+                <p>
+                    {{plan.description}}
+                </p>
+                <a routerLink="../Payments/Pay/{{plan.priceId}}">Pagar este</a>
+            </article>
+        </ng-container>        
     </div>
 
 </section>

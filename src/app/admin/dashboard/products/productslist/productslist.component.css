@@ -1,6 +1,11 @@
-.products-list{
+.products{
     padding-top: 90px;
     margin-inline: 15%;
+    animation: fadeopacity 0.4s;
+}
+
+.products-list{
+    margin-top: 2em;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 10px;
@@ -9,15 +14,40 @@
 .prod{
     display: flex;
     flex-direction: column;
-    background-color: rgba(128, 128, 128, 0.438);
+    background-color: rgba(177, 177, 177, 0.438);
     padding: 10px;
     border-radius: 10px;
+    animation: slidefromtop 0.4s;
 }
+
+.prod.deleted{
+    animation: outopacity 0.4s forwards;
+}
+
+.create-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #002db3;
+    transition: all 0.4s;
+}
+
+.create-btn:hover{
+    background-color: #0000b3;
+}
+
+
+
+
 
 
 @media only screen and (max-width: 600px) {
     .products-list{
        grid-template-columns: 1fr;
-        margin: 10px;
+    }
+
+    .products{
+        margin:10px;
     }
 }

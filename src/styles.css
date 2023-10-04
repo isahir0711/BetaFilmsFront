@@ -30,6 +30,16 @@ html {
     }
 }
 
+@keyframes outopacity {
+    0%{
+        opacity: 1;
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}
+
 @keyframes slidefromtop {
     0%{
         opacity: 0;

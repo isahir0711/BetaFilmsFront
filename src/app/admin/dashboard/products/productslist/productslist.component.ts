@@ -21,8 +21,21 @@ export class ProductslistComponent implements OnInit {
   getProducts(){
     this.productsService.getProducts().subscribe(response =>{
       this.products = response;
-      console.log(this.products);
     })
   }
 
+  deleteProd(i:number){
+    this.productsService.deleteProduct(this.products[i].id).subscribe();
+
+    const $prodCard = document.getElementById(`prod-${i}`);
+
+    if($prodCard){
+      $prodCard.classList.add('deleted');
+
+      setTimeout(() => {
+        this.products.splice(i,1);
+      }, 300);
+
+    }
+  }
 }
