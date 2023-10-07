@@ -25,6 +25,7 @@ import { ProductsformComponent } from './admin/dashboard/products/productsform/p
 import { ProductslistComponent } from './admin/dashboard/products/productslist/productslist.component';
 import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
 import { SecurityInterceptorService } from './services/interceptors/security-interceptor.service';
+import { ToastComponent } from './reusable/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SecurityInterceptorService } from './services/interceptors/security-int
     ProductsformComponent,
     ProductslistComponent,
     DashboardComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

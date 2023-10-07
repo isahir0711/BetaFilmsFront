@@ -1,0 +1,54 @@
+.toast {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0.1px solid rgba(128, 128, 128, 0.479);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    animation: fadein 0.4s;
+    transition: all 0.4s;
+}
+
+.toast.hidden{
+    /* Establece las propiedades cuando el toast se oculta */
+    transform: translateY(-40%);
+    opacity: 0;
+}
+
+.toast>.actions {
+    align-self: flex-start;
+}
+
+.close-toast{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}

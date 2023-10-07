@@ -1,14 +1,17 @@
-
 <section class="products">
     <a routerLink="Create" class="create-btn">Registrar Producto</a>
     <section class="products-list">
-        <ng-container *ngFor="let prod of products;let i = index">        
+        <ng-container *ngFor="let prod of products;let i = index">
             <article id="prod-{{i}}" class="prod">
-                <p>{{prod.priceId}}</p>
-                <p>{{prod.price}}</p>
-                <p>{{prod.description}}</p>
-                <button (click)="deleteProd(i)">Delete</button>
+                <div class="prod-content">
+                    <h3 >{{prod.name}}</h3>
+                    <p>{{prod.price | currency}}</p>
+                    <p>{{prod.description}}</p>
+                </div>
+                <button class="btn-delete" (click)="deleteProd(i)">Eliminar</button>
             </article>
         </ng-container>
     </section>
 </section>
+
+<app-toast></app-toast>

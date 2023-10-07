@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductDTO } from '../product';
 import { ProductsService } from '../products.service';
+import { ToastService } from 'src/app/reusable/toast.service';
 
 @Component({
   selector: 'app-productslist',
@@ -9,7 +10,7 @@ import { ProductsService } from '../products.service';
 })
 export class ProductslistComponent implements OnInit {
 
-  constructor(private productsService:ProductsService){}
+  constructor(private productsService:ProductsService,private toastService:ToastService){}
 
   products: ProductDTO[] = [];
 
@@ -32,10 +33,23 @@ export class ProductslistComponent implements OnInit {
     if($prodCard){
       $prodCard.classList.add('deleted');
 
+      this.showToast();
+
       setTimeout(() => {
         this.products.splice(i,1);
       }, 300);
 
     }
+  }
+
+
+  showToast() {
+    const toastData = {
+      title: 'Producto Eliminado',
+      description: 'Producto Eliminado con exito.',
+    };
+    this.toastService.showToast(toastData);
+
+    
   }
 }
