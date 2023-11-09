@@ -12,6 +12,8 @@ import { ProductslistComponent } from './admin/dashboard/products/productslist/p
 import { adminGuard } from './services/guards/admin.guard';
 import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
 import { ProductsformComponent } from './admin/dashboard/products/productsform/productsform.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminbookings.component';
 
 const routes: Routes = [
   {path:"",title:'betaFilms',component:HomeComponent},
@@ -21,9 +23,13 @@ const routes: Routes = [
   {path:"Payments/Pay/:id",title:'Checkout',component:PayplanComponent,canActivate:[authGuard]},
   {path:"Payments/Success",title:'Exitoso',component:SuccessComponent,canActivate:[authGuard]},
 
+  
+  {path:"Bookings",component:BookingsComponent,canActivate:[authGuard]},
+
   {path:"Dashboard/Products",component:ProductslistComponent,canActivate:[adminGuard]},
   {path:"Dashboard/Products/Create",component:ProductsformComponent,canActivate:[adminGuard]},
   {path:"Dashboard",component:DashboardComponent,canActivate:[adminGuard]},
+  {path:"Dashboard/Bookings",component:AdminbookingsComponent,canActivate:[adminGuard]},
   
   
   //wildcard route

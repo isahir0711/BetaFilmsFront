@@ -13,6 +13,10 @@ export class ProductsService {
 
   constructor(private http:HttpClient) {}
 
+  public getProduct(id:string):Observable<ProductDTO>{
+    return this.http.get<ProductDTO>(`${this.apiURL}/GetProductById/${id}`);
+  }
+
   public getProducts():Observable<ProductDTO[]>{
     return this.http.get<ProductDTO[]>(`${this.apiURL}/GetProducts`);
   }
@@ -21,7 +25,7 @@ export class ProductsService {
     return this.http.post<ProductDTO>(`${this.apiURL}/CreateProduct`,prod);
   }
 
-  public deleteProduct(id:number):Observable<unknown>{
+  public deleteProduct(id:number):Observable<any>{
     return this.http.delete(`${this.apiURL}/Delete/${id}`);
   }
 }

@@ -4,6 +4,7 @@ import { ProductsService } from '../products.service';
 import { ProductDTO } from '../product';
 import { catchError, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/reusable/toast.service';
 
 @Component({
   selector: 'app-productsform',
@@ -14,7 +15,7 @@ export class ProductsformComponent {
 
   formProd:FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private productsService: ProductsService,private router:Router) {
+  constructor(private formBuilder:FormBuilder,private productsService: ProductsService,private router:Router,private toastService:ToastService) {
     this.formProd = formBuilder.group({
       name:['',{validators:[Validators.required,Validators.maxLength(35)]}],
       description:['',{validators:[Validators.required,Validators.maxLength(600)]}],
@@ -27,9 +28,13 @@ export class ProductsformComponent {
     if(this.formProd.valid){
       const prod: ProductDTO = this.formProd.value;
 
+      this.showToast();
+
       this.productsService.createProduct(prod).pipe(
         tap(() =>{
-          this.router.navigate(['/Dashboard/Products'])
+          setTimeout(()=>{
+            this.router.navigate(['/Dashboard/Products'])
+          },800)
         }),
         catchError(error =>{
           console.error('Oppsie',error)
@@ -41,5 +46,13 @@ export class ProductsformComponent {
     else{
       alert('?')
     }
+  }
+
+  showToast() {
+    const toastData = {
+      title: 'Producto Creado',
+      description: 'Producto Creado con exito.',
+    };
+    this.toastService.showToast(toastData);
   }
 }

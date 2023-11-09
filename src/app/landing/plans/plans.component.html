@@ -3,7 +3,7 @@
 
     <h1 class="choose-title">Elije tu plan</h1>
     
-    <div class="gridplans">
+    <div class="gridplans" [style.--columns]="columns">
         <ng-container *ngFor="let plan of plans;let i = index">
             <article class="plan">
                 <h2 class="plan-title">{{plan.name}}</h2>
@@ -13,7 +13,7 @@
                 <p>
                     {{plan.description}}
                 </p>
-                <a routerLink="../Payments/Pay/{{plan.priceId}}">Pagar este</a>
+                <a routerLink="../Payments/Pay/{{plan.priceId}}">Proceder al pago</a>
             </article>
         </ng-container>        
     </div>

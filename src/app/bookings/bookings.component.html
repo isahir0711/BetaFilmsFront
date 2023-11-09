@@ -1,0 +1,15 @@
+<section class="bookings">
+    <section class="bookings-list">
+        <ng-container *ngFor="let book of bookings;let i = index">
+            <article id="book-{{i}}" class="book">
+                <div class="book-content">
+                    <h2>Plan: {{book.Product.name}}</h2>
+                    <p>Descripcion del plan: {{book.Product.description}}</p>
+                    <p>Fecha: {{book.date | date:'medium'}}</p>
+                    <p>Total: {{book.Product.price | currency}}</p>
+                </div>
+                <!-- <button class="btn-delete" (click)="deleteProd(i)">Eliminar</button> -->
+            </article>
+        </ng-container>
+    </section>
+</section>

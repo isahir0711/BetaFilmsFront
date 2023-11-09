@@ -8,6 +8,11 @@
         </div>
 
         <div class="controls-container">
+            <label for="date" class="form-label">Fecha</label>
+            <input id="date" class="form-input" type="datetime-local" formControlName="date">
+        </div>
+
+        <div class="controls-container">
             <p>Datos de la tarjeta</p>
         </div>
 
@@ -23,13 +28,13 @@
     <article class="checkout-summary">
         <h2>Resumen de pago</h2>
         <div class="product card">
-            <h3>Plan de fotos</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sequi ab a quis, odio non in, maiores quisquam quidem dolor animi id est? Temporibus, eligendi.</p>
+            <h3>{{product?.name}}</h3>
+            <p>{{product?.description}}</p>
         </div>
 
         <div class="total card">
             <h3>Total</h3>
-            <p>400$USD</p>
+            <p>{{product?.price | currency}} USD</p>
         </div>
     </article>
 

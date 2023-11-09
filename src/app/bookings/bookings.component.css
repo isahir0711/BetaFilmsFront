@@ -1,0 +1,73 @@
+.bookings{
+    padding-top: 90px;
+    margin-inline: 15%;
+    animation: fadeopacity 0.4s;
+}
+
+.bookings-list{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(226, 226, 226, 0.438);
+    border: 0.5px solid rgb(184, 184, 184);
+    padding: 15px;
+    border-radius: 5px;
+    animation: slidefromtop 0.4s;
+    box-shadow: rgba(100, 100, 111, 0.116) 0px 7px 29px 0px;
+}
+
+.book-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.book.deleted{
+    animation: outopacity 0.4s forwards;
+}
+
+
+.create-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #002db3;
+    transition: all 0.4s;
+}
+
+.create-btn:hover{
+    background-color: #0000b3;
+}
+
+.btn-delete{
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 0.5px solid grey;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .bookings-list{
+       grid-template-columns: 1fr;
+    }
+
+    .bookings{
+        margin:10px;
+    }
+
+    .book{
+    padding: 5px;
+    }
+}

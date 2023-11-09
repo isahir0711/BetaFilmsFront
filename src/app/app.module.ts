@@ -26,6 +26,8 @@ import { ProductslistComponent } from './admin/dashboard/products/productslist/p
 import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.component';
 import { SecurityInterceptorService } from './services/interceptors/security-interceptor.service';
 import { ToastComponent } from './reusable/toast/toast.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminbookings.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ToastComponent } from './reusable/toast/toast.component';
     ProductslistComponent,
     DashboardComponent,
     ToastComponent,
+    BookingsComponent,
+    AdminbookingsComponent,
   ],
   imports: [
     BrowserModule,

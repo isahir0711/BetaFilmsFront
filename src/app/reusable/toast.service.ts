@@ -27,7 +27,7 @@ export class ToastService {
     }
     setTimeout(() =>{
       this.toastSubject.next(null);
-    },200)
+    },400)
 
   }
 
