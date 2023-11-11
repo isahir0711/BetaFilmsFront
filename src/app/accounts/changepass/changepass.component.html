@@ -1,0 +1,43 @@
+
+<section class="form-container">
+    <form class="form" action="" (submit)="changePassword()" [formGroup]="form">
+
+        <div class="control-container">
+            <label for="email" class="form-label" style="text-align: center;">Ingresa tu nueva contraseña</label>
+        </div>
+
+        <div class="errors-container" [class.show]="errors.length > 0">
+            <ng-container *ngIf="errors !==  null">
+                <ng-container *ngFor="let error of errors">
+                        <p>{{error}}</p>
+                </ng-container>
+            </ng-container>
+        </div>
+
+        <div class="control-container">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" class="form-input" formControlName="password">
+            <div class="error" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                La contrasea es obligatoria
+            </div>
+        </div>
+
+        <div class="control-container">
+            <label for="passwordConfirm" class="form-label">Confirma tu Contraseña</label>
+            <input type="password" id="passwordConfirm" class="form-input" formControlName="passwordConfirm">
+            <div class="error" *ngIf="form.get('passwordConfirm')?.hasError('required') && form.get('passwordConfirm')?.touched">
+                La contrasea es obligatoria
+            </div>
+        </div>
+
+        <div class="errors-container" [class.show]="errorPass != '' ">
+            <ng-container *ngIf="errorPass !==  null">
+                <p>{{errorPass}}</p>
+            </ng-container>
+        </div>
+
+        <div class="control-container">
+            <button class="btn primary" type="submit" [disabled]="form.invalid">Cambiar Contraseña</button>
+        </div>
+    </form>
+</section>

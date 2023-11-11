@@ -28,6 +28,9 @@ import { SecurityInterceptorService } from './services/interceptors/security-int
 import { ToastComponent } from './reusable/toast/toast.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminbookings.component';
+import { RecoverpassComponent } from './accounts/recoverpass/recoverpass.component';
+import { RecoverpasscodeComponent } from './accounts/recoverpasscode/recoverpasscode.component';
+import { ChangepassComponent } from './accounts/changepass/changepass.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminboo
     ToastComponent,
     BookingsComponent,
     AdminbookingsComponent,
+    RecoverpassComponent,
+    RecoverpasscodeComponent,
+    ChangepassComponent,
   ],
   imports: [
     BrowserModule,

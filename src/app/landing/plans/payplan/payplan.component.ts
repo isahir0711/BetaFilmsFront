@@ -17,8 +17,5 @@ export class PayplanComponent implements OnInit{
     this.activatedRoute.params.subscribe((params) => {
       this.priceId= params['id']
     });
-
-    console.log(this.priceId);
-    
   }
 }

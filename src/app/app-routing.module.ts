@@ -14,15 +14,22 @@ import { DashboardComponent } from './admin/dashboard/dashboard/dashboard.compon
 import { ProductsformComponent } from './admin/dashboard/products/productsform/productsform.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminbookings.component';
+import { RecoverpassComponent } from './accounts/recoverpass/recoverpass.component';
+import { RecoverpasscodeComponent } from './accounts/recoverpasscode/recoverpasscode.component';
+import { ChangepassComponent } from './accounts/changepass/changepass.component';
 
 const routes: Routes = [
   {path:"",title:'betaFilms',component:HomeComponent},
   {path:"Planes",title:'Planes',component:PlansComponent},
+
   {path:"Accounts/LogIn",title:'Log In',component:LoginComponent},
   {path:"Accounts/SignIn",title:'Sign In',component:SigninComponent},
+  {path:"Accounts/ForgotPassword/ChangePass/:token/:email",title:'Change Password',component:ChangepassComponent},
+  {path:"Accounts/ForgotPassword",title:'Forgot Password',component:RecoverpassComponent},
+  // {path:"Accounts/ForgotPassword/Code",title:'Forgot Password',component:RecoverpasscodeComponent},
+
   {path:"Payments/Pay/:id",title:'Checkout',component:PayplanComponent,canActivate:[authGuard]},
   {path:"Payments/Success",title:'Exitoso',component:SuccessComponent,canActivate:[authGuard]},
-
   
   {path:"Bookings",component:BookingsComponent,canActivate:[authGuard]},
 
@@ -30,7 +37,6 @@ const routes: Routes = [
   {path:"Dashboard/Products/Create",component:ProductsformComponent,canActivate:[adminGuard]},
   {path:"Dashboard",component:DashboardComponent,canActivate:[adminGuard]},
   {path:"Dashboard/Bookings",component:AdminbookingsComponent,canActivate:[adminGuard]},
-  
   
   //wildcard route
   // {path: '**', redirectTo: ''}

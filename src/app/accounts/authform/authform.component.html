@@ -29,13 +29,14 @@
 
         <div class="control-container">
             <button class="btn primary" type="submit" [disabled]="form.invalid">{{action}}</button>
+
             <ng-container *ngIf="action=='Iniciar Sesion';">
+                <span class="form-span"><a class="signin" routerLink="../ForgotPassword">¿Olvidaste tu contraseña?</a></span>
                 <span class="form-span">¿No tienes una cuenta? <a class="signin" routerLink="../SignIn">Registrate</a></span>
             </ng-container>
             <ng-container *ngIf="action=='Registrate';">
                 <span class="form-span">¿Ya tienes una cuenta? <a class="signin" routerLink="../LogIn">Inicia Sesion</a></span>
             </ng-container>
-            
             
         </div>
     </form>

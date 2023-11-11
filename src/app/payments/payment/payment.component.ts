@@ -13,6 +13,7 @@ import { catchError, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/admin/dashboard/products/products.service';
 import { ProductDTO } from 'src/app/admin/dashboard/products/product';
+import { parseAPIErrors } from 'src/app/utilities/apiErrors';
 
 @Component({
   selector: 'app-payment',
@@ -141,6 +142,7 @@ export class PaymentComponent implements OnInit {
                 //console.log('Respuesta del servidor:', response);
               }),
               catchError((error: any) => {
+                alert(parseAPIErrors(error))
                 console.error('Error al procesar la solicitud:', error);
                 throw error;
               })

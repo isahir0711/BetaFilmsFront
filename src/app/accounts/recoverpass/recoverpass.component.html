@@ -1,0 +1,28 @@
+<section class="form-container">
+    <form class="form" action="" (submit)="sendEmail()" [formGroup]="form">
+
+        <div class="control-container">
+            <label for="email" class="form-label" style="text-align: center;">Ingresa tu correo para recuepar tu cuenta</label>
+        </div>
+
+        <div class="errors-container" [class.show]="errorMail != '' ">
+            <ng-container *ngIf="errorMail !==  null">
+                <p>{{errorMail}}</p>
+            </ng-container>
+        </div>
+
+        <div class="control-container">
+            <label for="email" class="form-label">Correo</label>
+            <input type="email" id="email" class="form-input" formControlName="email">
+            <div class="error" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                El email es obligatorio
+            </div>
+        </div>
+
+        <div class="control-container">
+            <button class="btn primary" type="submit" [disabled]="form.invalid">Enviar Codigo</button>
+        </div>
+    </form>
+</section>
+
+<app-toast></app-toast>

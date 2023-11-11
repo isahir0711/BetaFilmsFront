@@ -12,6 +12,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     animation: fadein 0.4s;
     transition: all 0.4s;
+    background-color: #fff;
 }
 
 .toast.hidden{
