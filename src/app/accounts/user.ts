@@ -18,3 +18,8 @@ export interface ChangePasswordDTO{
     emailToChange:string,
     recoverToken:string
 }
+
+export interface ConfirmEmailDTO{
+    email:string,
+    confirmEmailToken:string
+}

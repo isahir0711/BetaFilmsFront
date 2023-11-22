@@ -4,6 +4,7 @@ import { SecurityService } from 'src/app/services/security.service';
 import { Router } from '@angular/router';
 import { parseAPIErrors } from 'src/app/utilities/apiErrors';
 import { catchError, map } from 'rxjs';
+import { ToastService } from 'src/app/reusable/toast.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ import { catchError, map } from 'rxjs';
 })
 export class SigninComponent {
 
-  constructor(private securityService:SecurityService,private router:Router) {
+  constructor(private securityService:SecurityService,private router:Router,private toastService:ToastService) {
   }
 
   errors: string[] = [];
@@ -31,8 +32,10 @@ export class SigninComponent {
   signin(creds:UserCreds){
     this.securityService.signIn(creds).pipe(
       map((response)=>{
-        this.securityService.saveToken(response);
-        this.router.navigate(['']);
+        this.showToast();
+        setTimeout(()=>{
+          this.router.navigate(['Accounts/LogIn']);
+        },600)
       }),
       catchError(err =>{
         this.errors= parseAPIErrors(err);
@@ -42,4 +45,11 @@ export class SigninComponent {
     ).subscribe();
   }
 
+  showToast():void{
+    const toastData = {
+      title: 'Correo enviado',
+      description: 'Link de confirmacion enviado a tu correo.',
+    };
+    this.toastService.showToast(toastData);
+  }
 }

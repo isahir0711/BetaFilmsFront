@@ -17,6 +17,7 @@ import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminboo
 import { RecoverpassComponent } from './accounts/recoverpass/recoverpass.component';
 import { RecoverpasscodeComponent } from './accounts/recoverpasscode/recoverpasscode.component';
 import { ChangepassComponent } from './accounts/changepass/changepass.component';
+import { EmailconfirmedComponent } from './accounts/emailconfirmed/emailconfirmed.component';
 
 const routes: Routes = [
   {path:"",title:'betaFilms',component:HomeComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:"Accounts/SignIn",title:'Sign In',component:SigninComponent},
   {path:"Accounts/ForgotPassword/ChangePass/:token/:email",title:'Change Password',component:ChangepassComponent},
   {path:"Accounts/ForgotPassword",title:'Forgot Password',component:RecoverpassComponent},
+  {path:"Accounts/EmailConfirmed/:token/:email",title:'Forgot Password',component:EmailconfirmedComponent},
   // {path:"Accounts/ForgotPassword/Code",title:'Forgot Password',component:RecoverpasscodeComponent},
 
   {path:"Payments/Pay/:id",title:'Checkout',component:PayplanComponent,canActivate:[authGuard]},

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { AuthenticationResponse, ChangePasswordDTO, RecoverPassDTO, UserCreds } from '../accounts/user';
+import { AuthenticationResponse, ChangePasswordDTO, ConfirmEmailDTO, RecoverPassDTO, UserCreds } from '../accounts/user';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -79,6 +79,10 @@ export class SecurityService {
 
   changePassword(changePassDTO:ChangePasswordDTO):Observable<any>{
     return this.httpClient.post<any>(this.apiURL+'/ChangePassword',changePassDTO);
+  }
+
+  confirmEmail(confirmEmailDTO:ConfirmEmailDTO):Observable<any>{
+    return this.httpClient.post<any>(this.apiURL+'/ConfirmEmail',confirmEmailDTO);
   }
 
   saveToken(authenticationResponse: AuthenticationResponse){

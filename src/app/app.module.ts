@@ -31,6 +31,7 @@ import { AdminbookingsComponent } from './admin/dashboard/adminbookings/adminboo
 import { RecoverpassComponent } from './accounts/recoverpass/recoverpass.component';
 import { RecoverpasscodeComponent } from './accounts/recoverpasscode/recoverpasscode.component';
 import { ChangepassComponent } from './accounts/changepass/changepass.component';
+import { EmailconfirmedComponent } from './accounts/emailconfirmed/emailconfirmed.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { ChangepassComponent } from './accounts/changepass/changepass.component'
     RecoverpassComponent,
     RecoverpasscodeComponent,
     ChangepassComponent,
+    EmailconfirmedComponent,
   ],
   imports: [
     BrowserModule,

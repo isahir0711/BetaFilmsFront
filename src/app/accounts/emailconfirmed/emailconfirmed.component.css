@@ -1,0 +1,10 @@
+.msg-confirm{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color:hsla(0,0%,100%,1);
+    background-image:
+    radial-gradient(at 98% 95%, hsla(118,100%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(118,100%,71%,1) 0px, transparent 50%);
+}

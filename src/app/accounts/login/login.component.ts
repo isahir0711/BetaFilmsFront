@@ -4,6 +4,7 @@ import { SecurityService } from 'src/app/services/security.service';
 import { Router } from '@angular/router';
 import { parseAPIErrors } from 'src/app/utilities/apiErrors';
 import { catchError, map } from 'rxjs';
+import { ToastService } from 'src/app/reusable/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { catchError, map } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private securityService:SecurityService,private router:Router) {
+  constructor(private securityService:SecurityService,private router:Router,) {
   }
   
   errors: string[] = [];
@@ -41,5 +42,6 @@ export class LoginComponent {
     ).subscribe();
   }
 
+ 
 
 }
