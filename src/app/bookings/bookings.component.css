@@ -11,8 +11,9 @@
 }
 
 .bookings-list{
-    margin-inline: 15%;
+    margin-inline: 10%;
     margin-top: 2em;
+    padding-bottom: 2em;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
@@ -69,10 +70,11 @@
     .bookings-list{
        grid-template-columns: 1fr;
     }
-
+    
     .bookings{
-        margin:10px;
+        height: 100%;
     }
+
 
     .book{
     padding: 5px;

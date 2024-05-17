@@ -14,7 +14,7 @@ export class PaymentService {
   apiURL = environment.apiURL;
 
   tryPay(payrequest: PaymentRequestDTO): Observable<PaymentRequestDTO> {
-    return this.http.post<PaymentRequestDTO>(`${this.apiURL}create-payment-intent `, payrequest)
+    return this.http.post<PaymentRequestDTO>(`${this.apiURL}/create-payment-intent `, payrequest)
     // .pipe(
     //   catchError(err => err)
     // );

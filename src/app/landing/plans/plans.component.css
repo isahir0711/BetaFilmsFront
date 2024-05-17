@@ -1,6 +1,6 @@
 .plans-container {
+    height: 100vh;
     padding-top: 60px;
-    min-height: 100vh;
     background-color: hsla(107, 0%, 100%, 1);
     background-image:
         radial-gradient(at 42% 72%, hsla(242, 76%, 67%, 1) 0px, transparent 50%),
@@ -39,10 +39,16 @@
 }
 
 .plan-price {
-    font-size: 5em;
+    font-size: 3em;
 }
+
+
 @media only screen and (max-width: 600px) {
     .gridplans{
         grid-template-columns: 1fr;
+    }
+
+    .plans-container {
+        height: 100%;
     }
 }

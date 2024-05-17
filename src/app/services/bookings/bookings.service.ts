@@ -11,7 +11,7 @@ export class BookingsService {
 
   constructor(private _http:HttpClient) { }
 
-  apiURL = environment.apiURL + 'api/Bookings';
+  apiURL = environment.apiURL + '/Bookings';
 
   public getUserBookings():Observable<BookingDTO[]>{
     return this._http.get<BookingDTO[]>(`${this.apiURL}/GetUserBookings`);

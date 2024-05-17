@@ -9,7 +9,10 @@
 
 html {
     background-color:hsla(222,0%,100%,1);
-    height: 100vh;
+}
+
+main{
+    height: 100%;
 }
 
 

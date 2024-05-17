@@ -142,7 +142,6 @@ export class PaymentComponent implements OnInit {
                 //console.log('Respuesta del servidor:', response);
               }),
               catchError((error: any) => {
-                alert(parseAPIErrors(error))
                 console.error('Error al procesar la solicitud:', error);
                 throw error;
               })
